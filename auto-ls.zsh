@@ -19,13 +19,13 @@ fi
 
 
 auto-ls-ls () {
-  ls --color=auto -a
+	exa -a --icons
   [[ $AUTO_LS_NEWLINE != false ]] && echo ""
 }
 
 auto-ls-git-status () {
   if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == true ]]; then
-    git status
+    git status -s
   fi
 }
 
