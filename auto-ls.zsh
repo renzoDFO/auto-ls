@@ -6,7 +6,7 @@ if (( ! ${+AUTO_LS_CHPWD} )); then
 fi
 
 if [[ $#AUTO_LS_COMMANDS -eq 0 ]]; then
-  AUTO_LS_COMMANDS=(ls git-status)
+  AUTO_LS_COMMANDS=(ls)
 fi
 
 if (( ! ${+AUTO_LS_NEWLINE} )); then
@@ -21,12 +21,6 @@ fi
 auto-ls-ls () {
 	exa -a --icons
   [[ $AUTO_LS_NEWLINE != false ]] && echo ""
-}
-
-auto-ls-git-status () {
-  if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == true ]]; then
-    git status -s
-  fi
 }
 
 auto-ls () {
