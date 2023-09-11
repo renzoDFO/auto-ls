@@ -19,7 +19,7 @@ fi
 
 
 auto-ls-ls () {
-	exa -a --icons
+	eza -a --icons
   [[ $AUTO_LS_NEWLINE != false ]] && echo ""
 }
 
